@@ -1,0 +1,28 @@
+[
+  {
+    "Id": "order_summary",
+    "MenuName": "受注サマリー",
+    "Sql": "SELECT TOP 500 o.OrderID, o.OrderDate, c.CompanyName, o.ShipCountry, o.Freight FROM Orders o INNER JOIN Customers c ON o.CustomerID = c.CustomerID ORDER BY o.OrderDate DESC",
+    "ColumnMapping": {
+      "OrderID": "受注番号",
+      "OrderDate": "受注日",
+      "CompanyName": "得意先名",
+      "ShipCountry": "配送先国",
+      "Freight": "送料"
+    }
+  },
+  {
+    "Id": "product_list",
+    "MenuName": "商品一覧",
+    "Sql": "SELECT TOP 500 p.ProductID, p.ProductName, c.CategoryName, s.CompanyName AS SupplierName, p.UnitPrice, p.UnitsInStock, p.Discontinued FROM Products p INNER JOIN Categories c ON p.CategoryID = c.CategoryID INNER JOIN Suppliers s ON p.SupplierID = s.SupplierID ORDER BY c.CategoryName, p.ProductName",
+    "ColumnMapping": {
+      "ProductID": "商品ID",
+      "ProductName": "商品名",
+      "CategoryName": "カテゴリ",
+      "SupplierName": "仕入先",
+      "UnitPrice": "単価",
+      "UnitsInStock": "在庫数",
+      "Discontinued": "廃番"
+    }
+  }
+]
