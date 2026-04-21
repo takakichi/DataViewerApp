@@ -20,7 +20,7 @@
             <path stroke-linecap="round" stroke-linejoin="round"
                   d="M4 6h16M4 10h16M4 14h16M4 18h16" />
         </svg>
-        <span class="text-xl font-semibold tracking-wide">データビューアー</span>
+        <span class="text-xl font-semibold tracking-wide">Data Viewer</span>
     </header>
 
     <!-- メインレイアウト -->
@@ -37,7 +37,7 @@
                     {
                         var isActive = item.Id == queryId;
                         <li>
-                            <a href="/?queryId=@item.Id"
+                            <a href="./?queryId=@item.Id"
                                class="flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-colors
                                       @(isActive
                                           ? "bg-blue-50 text-blue-700 border-l-4 border-blue-600"
